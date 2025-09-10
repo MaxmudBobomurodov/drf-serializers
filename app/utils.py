@@ -21,7 +21,7 @@ def basic_auth_required(view_func):
         auth_header = request.META.get('HTTP_AUTHORIZATION', '')
         if auth_header.startswith('Basic '):
             try:
-                # Decode basic auth
+                # Decode basic blogs
                 encoded_credentials = auth_header.split(' ')[1]
                 decoded_credentials = base64.b64decode(encoded_credentials).decode('utf-8')
                 username, password = decoded_credentials.split(':', 1)
